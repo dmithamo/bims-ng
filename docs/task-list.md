@@ -22,7 +22,6 @@ Sure, here's a revised task list for delivering the project as developers, consi
 
 - [ ] Implement guards to protect routes and ensure user access control
 
-
 - [ ] Build the expenses module, enabling users to create, manage, and track their expenses
 
 - [ ] Build the budgeting module, enabling users to create, manage, and track their budgets

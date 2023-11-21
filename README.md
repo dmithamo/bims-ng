@@ -6,11 +6,11 @@ Behold BIMS, your means for bringing order to your finances (and other areas of 
 
 This project aims to develop a comprehensive budgeting and expense tracking application using Angular v17. The application will enable users to effectively manage their finances by providing features such as:
 
-* Budgeting: Create and manage customized budgets based on various categories and time periods.
-* Expense Tracking: Record and categorize expenses to monitor spending patterns and identify areas for potential savings.
-* Financial Insights: Generate detailed reports and visualizations to gain insights into financial trends and make informed decisions.
-* Goal Setting: Define financial goals and track progress towards achieving them.
-* Security: Implement robust security measures to protect user data and financial information.
+- Budgeting: Create and manage customized budgets based on various categories and time periods.
+- Expense Tracking: Record and categorize expenses to monitor spending patterns and identify areas for potential savings.
+- Financial Insights: Generate detailed reports and visualizations to gain insights into financial trends and make informed decisions.
+- Goal Setting: Define financial goals and track progress towards achieving them.
+- Security: Implement robust security measures to protect user data and financial information.
 
 ## Project Directory Structure
 
@@ -69,9 +69,9 @@ src
 
 ## Technologies Used
 
-* Frontend: Angular v17
-* Backend: TBD (to be determined)
-* Database: TBD (to be determined)
+- Frontend: Angular v17
+- Backend: TBD (to be determined)
+- Database: TBD (to be determined)
 
 ## Project Overview
 
