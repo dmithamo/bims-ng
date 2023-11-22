@@ -13,4 +13,9 @@ import { environment } from '../environments/environment';
 export class AppComponent {
   title = 'bims';
   public version = environment.version;
+
+  public users = [
+    { name: 'John Doe', age: 25 },
+    { name: 'Jane Doe', age: 26 },
+  ];
 }

@@ -1,5 +1,12 @@
 <main>
   <h1>Hello, {{ title }}</h1>
-  You are running version <code>{{ version }}</code> of this app.
+  <small
+    >You are running version <code>{{ version }}</code> of this app.</small
+  >
+  <ul>
+    @for (user of users; track user.name) {
+      <li>{{ user.name }}</li>
+    }
+  </ul>
 </main>
 <router-outlet></router-outlet>

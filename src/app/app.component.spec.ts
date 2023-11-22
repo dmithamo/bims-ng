@@ -26,4 +26,21 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain('Hello, bims');
   });
+
+  it('should render a list of users', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('ul')?.textContent).toContain('John Doe');
+    expect(compiled.querySelector('ul')?.textContent).toContain('Jane Doe');
+  });
+
+  it('should render version number', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('small')?.textContent).toContain(
+      'You are running version'
+    );
+  });
 });
