@@ -66,8 +66,8 @@
           "options": {
             "host": "local.bims.dmithamo.dev",
             "ssl": true,
-            "sslKey": "localhost+5-key.pem",
-            "sslCert": "localhost+5.pem"
+            "sslKey": "local.bims.dmithamo.dev-key.pem",
+            "sslCert": "local.bims.dmithamo.dev.pem"
           }
         },
         "extract-i18n": {
