@@ -9,13 +9,13 @@
     "test": "ng test",
     "test:ci": "ng test --no-watch --no-progress --browsers=ChromeHeadless --code-coverage",
     "lint": "ng lint",
-    "format": "prettier . --write",
+    "format": "prettier ./src/app --write",
     "prepare": "husky install && pnpm run setup-local",
     "update-version": "sh scripts/update-version.sh",
     "setup-local": "sh scripts/setup-local.sh"
   },
   "lint-staged": {
-    "src/**/*": "prettier --write --ignore-unknown"
+    "src/**/*": "pnpm run format"
   },
   "private": true,
   "dependencies": {
