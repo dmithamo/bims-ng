@@ -1,17 +1,14 @@
 import { Routes } from '@angular/router';
-import { ExpenseListComponent } from './expense-list/expense-list.component';
 import { CreateExpenseComponent } from './create-expense/create-expense.component';
 import { ExpenseDetailsComponent } from './expense-details/expense-details.component';
+import { ExpenseComponent } from './expense.component';
 
 export const expenseRoutes: Routes = [
   {
     path: '',
     title: 'Expense',
+    component: ExpenseComponent,
     children: [
-      {
-        path: 'list',
-        component: ExpenseListComponent,
-      },
       {
         path: 'create',
         component: CreateExpenseComponent,
@@ -19,10 +16,12 @@ export const expenseRoutes: Routes = [
       {
         path: ':id',
         component: ExpenseDetailsComponent,
-      },
-      {
-        path: ':id/edit',
-        component: CreateExpenseComponent,
+        children: [
+          {
+            path: 'edit',
+            component: CreateExpenseComponent,
+          },
+        ],
       },
     ],
   },
