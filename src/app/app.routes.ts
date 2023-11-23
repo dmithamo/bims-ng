@@ -11,4 +11,9 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./components/budget/budget.routes').then(m => m.budgetRoutes),
   },
+  {
+    path: 'expense',
+    loadChildren: () =>
+      import('./components/expense/expense.routes').then(m => m.expenseRoutes),
+  },
 ];
