@@ -15,56 +15,66 @@ This project aims to develop a comprehensive budgeting and expense tracking appl
 ## Project Directory Structure
 
 ```
-src
-├── app
-│   ├── app.component.ts
-│   ├── app.module.ts
-│   ├── core
-│   │   ├── repositories
-│   │   │   ├── budget.repository.ts
-│   │   │   ├── expense.repository.ts
-│   │   │   ├── goal.repository.ts
-│   │   │   └── user.repository.ts
-│   │   ├── services
-│   │   │   ├── authentication.service.ts
-│   │   │   ├── budget.service.ts
-│   │   │   ├── expense.service.ts
-│   │   │   ├── goal.service.ts
-│   │   │   └── user.service.ts
-│   │   ├── shared
-│   │   │   ├── guards
-│   │   │   │   └── auth.guard.ts
-│   │   │   └── utils
-│   │   │       ├── date-utils.ts
-│   │   │       ├── number-utils.ts
-│   │   │       └── string-utils.ts
-│   ├── components
-│   │   ├── auth
-│   │   │   ├── login.component.ts
-│   │   │   ├── register.component.ts
-│   │   │   └── profile.component.ts
-│   │   ├── budgets
-│   │   │   ├── add-budget.component.ts
-│   │   │   ├── budget-details.component.ts
-│   │   │   └── budgets-list.component.ts
-│   │   └── expenses
-│   │       ├── add-expense.component.ts
-│   │       ├── expense-details.component.ts
-│   │       └── expenses-list.component.ts
-├── assets
-│   ├── fonts
-│   │   ├── roboto-regular.woff2
-│   └── images
-│       ├── budget-icon.png
-│       ├── expense-icon.png
-│       └── goal-icon.png
-├── environments
-│   ├── environment.prod.ts
-│   └── environment.ts
-├── index.html
-├── main.ts
+bims/
+│
+├── src/
+│   ├── app/
+│   │   ├── components/                   # UI components
+│   │   │   ├── dashboard/                # Dashboard component
+│   │   │   │   ├── dashboard.component.ts
+│   │   │   │   ├── dashboard.component.html
+│   │   │   │   └── dashboard.routes.ts
+│   │   │   │
+│   │   │   ├── expense-tracker/          # Expense tracker component
+│   │   │   │   ├── expense-tracker.component.ts
+│   │   │   │   ├── expense-tracker.component.html
+│   │   │   │   └── expense-tracker.routes.ts
+│   │   │   │
+│   │   │   ├── budget-planner/           # Budget planner component
+│   │   │   │   ├── budget-planner.component.ts
+│   │   │   │   ├── budget-planner.component.html
+│   │   │   │   └── budget-planner.routes.ts
+│   │   │   │
+│   │   │   └── ...                       # Other components
+│   │   │
+│   │   ├── services/                     # Business logic services
+│   │   │   ├── auth.service.ts           # Authentication service
+│   │   │   ├── budget.service.ts         # Budget-related business logic
+│   │   │   ├── expense.service.ts        # Expense-related business logic
+│   │   │   └── ...                       # Other business logic services
+│   │   │
+│   │   ├── repositories/                 # Data access logic
+│   │   │   ├── user.repository.ts        # Data access methods for user data
+│   │   │   ├── budget.repository.ts      # Data access methods for budget data
+│   │   │   ├── expense.repository.ts     # Data access methods for expense data
+│   │   │   └── ...                       # Other data access repositories
+│   │   │
+│   │   ├── models/                       # Data models and interfaces
+│   │   │
+│   │   ├── utils/                        # Utility functions and classes
+│   │   │
+│   │   ├── app.routes.ts                 # Main application routes
+│   │   └── app.component.ts
+│   │
+│   ├── assets/                           # Static assets like images, fonts
+│   ├── styles/                           # Global styles
+│   ├── index.html
+│   └── main.ts
+│
+├── environments/                         # Environment configurations
+│   ├── environment.ts                    # Environment configuration file
+│   └── environment.example.ts            # Example/template environment file
+│
+├── scripts/                              # Automation and utility scripts
+│   ├── update-version.sh                 # Script for updating application version
+│   └── setup-local.sh                    # Script for setting up local environment
+│
+├── e2e/                                  # End-to-end tests
+│
+├── angular.json
+├── tsconfig.json
 ├── package.json
-└── tsconfig.json
+└── ...
 ```
 
 ## Technologies Used

@@ -40,7 +40,7 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('small')?.textContent).toContain(
-      'You are running version'
+      'You are running version',
     );
   });
 });
