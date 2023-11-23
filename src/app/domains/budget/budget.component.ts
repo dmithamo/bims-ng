@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-money',
+  selector: 'app-budget',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './money.component.html',
-  styleUrl: './money.component.css',
+  templateUrl: './budget.component.html',
+  styleUrl: './budget.component.css',
 })
-export class MoneyComponent {}
+export class BudgetComponent {}

@@ -9,7 +9,7 @@ fi
 
 # Create the SSL certificate if it doesn't exist
 if [ ! -e "local.bims.dmithamo.dev" ] ; then
-  brew install mkcert
+  brew install mkcert # requires homebrew, and runs in sudo
   mkcert -install
   mkcert local.bims.dmithamo.dev
 fi
