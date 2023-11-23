@@ -4,3 +4,4 @@ if [ ! -e "src/environments/environment.ts" ] ; then
 fi
 
 sh scripts/update-version.sh
+nvm use

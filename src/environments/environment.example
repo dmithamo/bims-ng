@@ -4,4 +4,6 @@ export const environment = {
 
   env: 'development',
   apiURL: 'https://api.example.com',
+  sslKeyPath: './<path-to-ssl-key-relative-to-angular.json>',
+  sslCertPath: './<path-to-ssl-cert-relative-to-angular.json>'
 };
