@@ -2,11 +2,20 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { environment } from '../environments/environment';
+import { MainNavComponent } from './shared/ui-components/main-nav/main-nav.component';
+import { MainHeaderComponent } from './shared/ui-components/main-header/main-header.component';
+import { MainFooterComponent } from './shared/ui-components/main-footer/main-footer.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    MainNavComponent,
+    MainHeaderComponent,
+    MainFooterComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

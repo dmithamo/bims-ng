@@ -1,0 +1,44 @@
+header {
+  box-shadow: 0 0 3px 1px var(--shadow-color);
+  padding: calc(1.25 * var(--content-padding));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+}
+
+header .logo {
+  font-weight: bold;
+  color: var(--primary-color);
+  background-color: transparent;
+  text-decoration: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+header .user-info {
+  display: flex;
+  align-items: center;
+}
+
+img.user-avatar {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+header .user-info .user-meta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+header .user-info .user-meta .user-name {
+  font-weight: 600;
+}
+
+header .user-info .user-meta .user-role {
+  font-size: 0.8rem;
+  color: var(--secondary-color);
+}

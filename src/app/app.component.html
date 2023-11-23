@@ -1,4 +1,10 @@
-<router-outlet></router-outlet>
-<footer>
-  <span>v{{ version }}</span>
-</footer>
+<div class="root">
+  <app-main-header />
+  <main>
+    <app-main-nav />
+    <section class="content">
+      <router-outlet></router-outlet>
+    </section>
+  </main>
+</div>
+<app-main-footer />

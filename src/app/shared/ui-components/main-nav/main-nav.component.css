@@ -1,0 +1,23 @@
+nav {
+  background-color: var(--bg-color);
+  width: 15rem;
+  height: 100%;
+  padding: calc(1.25 * var(--content-padding));
+}
+
+nav a {
+  display: block;
+  padding: calc(0.75 * var(--content-padding));
+  text-decoration: none;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+nav > a:hover {
+  font-weight: bold;
+}
+
+nav > a.active {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+}
