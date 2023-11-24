@@ -13,7 +13,7 @@ export class SvgIconComponent implements OnInit {
   @Input() iconName: string = '';
   @Input() iconClass: string = '';
 
-  sanitizedSvgContent: SafeHtml = '';
+  sanitizedSvgContent: SafeHtml | null = null;
 
   constructor(
     private iconService: IconService,
@@ -22,8 +22,9 @@ export class SvgIconComponent implements OnInit {
 
   ngOnInit() {
     this.iconService.getIcon(this.iconName).subscribe(svgContent => {
-      this.sanitizedSvgContent =
-        this.sanitizer.bypassSecurityTrustHtml(svgContent);
+      this.sanitizedSvgContent = svgContent
+        ? this.sanitizer.bypassSecurityTrustHtml(svgContent)
+        : null;
     });
   }
 }

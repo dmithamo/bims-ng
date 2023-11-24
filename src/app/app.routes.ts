@@ -7,6 +7,11 @@ export const routes: Routes = [
     loadChildren: () => import('./auth/auth.routes').then(m => m.authRoutes),
   },
   {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./dashboard/dashboard.routes').then(m => m.dashboardRoutes),
+  },
+  {
     path: 'budget',
     loadChildren: () =>
       import('./budget/budget.routes').then(m => m.budgetRoutes),

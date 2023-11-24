@@ -1,7 +1,20 @@
-<header class="flex p-content-2 items-center">
-  <div class="flex-1">
-    <h1>Page title?</h1>
-    <p>Page subtitle?</p>
+<header class="flex items-center p-4">
+  <div class="flex-1 flex flex-col gap-0">
+    <h1 class="font-bold text-3xl">{{ pageTitle }}</h1>
+
+    <a
+      tabindex="0"
+      (keyup)="$event.key === 'Enter' && goBack()"
+      (click)="goBack()"
+      class="text-sm text-secondary-200 flex py-1 w-fit">
+      <app-svg-icon iconName="arrow-left" iconClass="w-4 h-4 mr-4" />
+      <span>Back</span>
+    </a>
   </div>
-  <p routerLink="apps" class="logo">Apps?</p>
+  <a
+    routerLink="apps"
+    class="font-bold opacity-50 hover:opacity-90"
+    routerLinkActive="opacity-90">
+    <app-svg-icon iconName="drawer" iconClass="w-8 h-8" />
+  </a>
 </header>

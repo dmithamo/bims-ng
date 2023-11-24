@@ -1,6 +1,3 @@
 @if (sanitizedSvgContent) {
-  <div
-    style="width: 24px; height: 24px"
-    [class]="iconClass"
-    [innerHTML]="sanitizedSvgContent"></div>
+  <div [class]="'w-6 h-6 ' + iconClass" [innerHTML]="sanitizedSvgContent"></div>
 }
