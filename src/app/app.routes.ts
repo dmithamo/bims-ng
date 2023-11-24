@@ -1,21 +1,20 @@
 import { Routes } from '@angular/router';
-import { NotFoundComponent } from './components/not-found/not-found.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 export const routes: Routes = [
   {
     path: '',
-    loadChildren: () =>
-      import('./components/auth/auth.routes').then(m => m.authRoutes),
+    loadChildren: () => import('./auth/auth.routes').then(m => m.authRoutes),
   },
   {
     path: 'budget',
     loadChildren: () =>
-      import('./components/budget/budget.routes').then(m => m.budgetRoutes),
+      import('./budget/budget.routes').then(m => m.budgetRoutes),
   },
   {
-    path: 'expense',
+    path: 'transaction',
     loadChildren: () =>
-      import('./components/expense/expense.routes').then(m => m.expenseRoutes),
+      import('./transaction/transaction.routes').then(m => m.transactionRoutes),
   },
   {
     path: '**',

@@ -2,9 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { environment } from '../environments/environment';
-import { MainNavComponent } from './shared/ui-components/main-nav/main-nav.component';
-import { MainHeaderComponent } from './shared/ui-components/main-header/main-header.component';
-import { MainFooterComponent } from './shared/ui-components/main-footer/main-footer.component';
+import { MainNavComponent } from './shared/components/main-nav/main-nav.component';
+import { MainHeaderComponent } from './shared/components/main-header/main-header.component';
+import { MainFooterComponent } from './shared/components/main-footer/main-footer.component';
 
 @Component({
   selector: 'app-root',

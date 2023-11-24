@@ -54,3 +54,8 @@ The project will be considered successful if it meets the following criteria:
 - The application is secure and protects user data and financial information.
 - The application meets the specified technical requirements and performs reliably.
 - The project is completed within the defined timeline and budget.
+
+
+**Design inspiration**
+![design-1](design-inspiration-1.png)
+(https://dribbble.com/shots/22958244-Easy-Bank-Online-Bank)

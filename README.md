@@ -86,7 +86,7 @@ bims/
 ## Project Overview
 
 This budgeting and expense tracking application will empower users to take control of their finances and achieve their financial goals. The application will provide a user-friendly interface, comprehensive features, and robust security measures to ensure a seamless and secure experience for users.
-
+More details in [docs](docs/money-spec.md)
 ---
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.1.
