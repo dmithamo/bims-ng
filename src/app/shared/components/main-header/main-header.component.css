@@ -1,5 +1,4 @@
 header {
-  box-shadow: 0 0 3px 1px var(--shadow-color);
   padding: calc(1.25 * var(--content-padding));
   display: flex;
   justify-content: space-between;
