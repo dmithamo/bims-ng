@@ -1,9 +1,0 @@
-a {
-  text-decoration: underline;
-  color: var(--primary-color);
-}
-
-li {
-  padding: var(--content-padding);
-  list-style: none;
-}

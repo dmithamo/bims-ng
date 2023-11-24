@@ -7,7 +7,6 @@ import { environment } from '../../../../environments/environment';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './main-footer.component.html',
-  styleUrl: './main-footer.component.css',
 })
 export class MainFooterComponent {
   public appVersion = environment.version;

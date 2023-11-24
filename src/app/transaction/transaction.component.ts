@@ -7,7 +7,6 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterOutlet, RouterLink],
   templateUrl: './transaction.component.html',
-  styleUrl: './transaction.component.css',
 })
 export class TransactionComponent {
   constructor(private router: Router) {}

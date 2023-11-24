@@ -6,6 +6,5 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './main-nav.component.html',
-  styleUrl: './main-nav.component.css',
 })
 export class MainNavComponent {}

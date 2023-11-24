@@ -6,6 +6,5 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './budget-list.component.html',
-  styleUrl: './budget-list.component.css',
 })
 export class BudgetListComponent {}

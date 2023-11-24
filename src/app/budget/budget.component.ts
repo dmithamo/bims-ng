@@ -7,6 +7,5 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterOutlet],
   templateUrl: './budget.component.html',
-  styleUrl: './budget.component.css',
 })
 export class BudgetComponent {}
