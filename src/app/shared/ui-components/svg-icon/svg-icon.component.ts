@@ -7,7 +7,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   selector: 'app-svg-icon',
   standalone: true,
   imports: [CommonModule],
-  template: `<div [innerHTML]="sanitizedSvgContent" [class]="iconClass"></div>`,
+  templateUrl: './svg-icon.component.html',
 })
 export class SvgIconComponent implements OnInit {
   @Input() iconName: string = '';
@@ -24,8 +24,6 @@ export class SvgIconComponent implements OnInit {
     this.iconService.getIcon(this.iconName).subscribe(svgContent => {
       this.sanitizedSvgContent =
         this.sanitizer.bypassSecurityTrustHtml(svgContent);
-
-      console.log(this.sanitizedSvgContent);
     });
   }
 }
