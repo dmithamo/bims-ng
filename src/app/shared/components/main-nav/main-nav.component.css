@@ -1,8 +1,10 @@
 nav {
   background-color: var(--bg-color);
-  width: 15rem;
-  height: 100%;
+  width: 100%;
   padding: calc(1.25 * var(--content-padding));
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 nav a {
