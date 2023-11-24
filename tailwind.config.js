@@ -3,18 +3,18 @@ module.exports = {
   content: ['./src/**/*.{html,ts}'],
   theme: {
     extend: {
-      spacing:{
-        'content': '1rem',
+      spacing: {
+        content: '1rem',
         'content-2': '1.5rem',
       },
-      colors:{
-        'primary': '#000000',
-        'secondary': {
+      colors: {
+        primary: 'rgba(0,0,0,0.75)',
+        secondary: {
           100: '#efefef',
           200: '#c2c2c2',
         },
-
-      }
+        'accent': '#2c9d15',
+      },
     },
   },
   plugins: [],

@@ -2,17 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --primary-color: #000000;
-  --secondary-color: #747474;
-  --accent-color: #2c9d15;
-  --shadow-color: #bbbbbb;
-  --shadow-color-light: #efefef;
-  --bg-color: #f5f5f5;
-  --content-padding: 1rem;
-}
-
 body {
   font-family: 'Abel', sans-serif;
-  color: var(--primary-color);
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { SvgIconComponent } from '../../ui-components/svg-icon/svg-icon.component';
 import { AppNavItem } from '../../utils/types';
 
@@ -13,9 +13,21 @@ import { AppNavItem } from '../../utils/types';
 export class MainNavComponent {
   protected navItems: AppNavItem[] = [
     {
-      path: '',
+      path: 'dashboard',
       icon: 'home',
       name: 'home',
+      permissions: [],
+    },
+    {
+      path: 'transactions',
+      icon: 'list',
+      name: 'transactions',
+      permissions: [],
+    },
+    {
+      path: 'budget',
+      icon: 'wallet',
+      name: 'budget',
       permissions: [],
     },
     {
@@ -25,5 +37,9 @@ export class MainNavComponent {
       permissions: [],
     },
   ];
-  constructor() {}
+  constructor(private router: Router) {}
+
+  isRouteActive(route: string): boolean {
+    return this.router.url.startsWith(`/${route}`);
+  }
 }

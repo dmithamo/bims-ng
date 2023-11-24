@@ -1,14 +1,16 @@
 <nav
-  class="bg-gradient-to-r from-gray-50 to-gray-100 flex justify-evenly items-center p-content-2">
+  class="bg-gradient-to-r from-gray-50 to-gray-100 flex justify-between items-center p-content-2">
   @for (navItem of navItems; track navItem.path) {
     <a
       [routerLink]="navItem.path"
-      class="flex items-center"
-      routerLinkActive="text-cyan">
+      class="flex items-center opacity-50"
+      routerLinkActive="opacity-90 text-accent">
       <app-svg-icon [iconName]="navItem.icon"></app-svg-icon>
-      <span class="capitalize ml-2">
-        {{ navItem.name }}
-      </span>
+      @if (isRouteActive(navItem.path)) {
+        <span class="capitalize ml-2">
+          {{ navItem.name }}
+        </span>
+      }
     </a>
   }
 </nav>
