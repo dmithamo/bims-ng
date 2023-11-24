@@ -1,4 +1,14 @@
 <nav
-  class="bg-gradient-to-r from-gray-50 to-gray-100 flex justify-around items-center p-content-2">
-  Nav items here
+  class="bg-gradient-to-r from-gray-50 to-gray-100 flex justify-evenly items-center p-content-2">
+  @for (navItem of navItems; track navItem.path) {
+    <a
+      [routerLink]="navItem.path"
+      class="flex items-center"
+      routerLinkActive="text-cyan">
+      <app-svg-icon [iconName]="navItem.icon"></app-svg-icon>
+      <span>
+        {{ navItem.name }}
+      </span>
+    </a>
+  }
 </nav>
