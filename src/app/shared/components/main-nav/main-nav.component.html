@@ -3,8 +3,12 @@
     <a
       [routerLink]="navItem.path"
       class="flex items-center opacity-50"
-      routerLinkActive="opacity-90 text-black">
-      <app-svg-icon [iconName]="navItem.icon"></app-svg-icon>
+      routerLinkActive="opacity-90 text-xl drop-shadow">
+      <app-svg-icon
+        [iconName]="navItem.icon"
+        [iconClass]="
+          isRouteActive(navItem.path) ? 'w-8 h-8' : ''
+        "></app-svg-icon>
       @if (isRouteActive(navItem.path)) {
         <span class="capitalize ml-2">
           {{ navItem.name }}
