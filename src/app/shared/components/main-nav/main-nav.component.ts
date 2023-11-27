@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
-import { SvgIconComponent } from '../../ui-components/svg-icon/svg-icon.component';
+import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 import { AppNavItem } from '../../utils/types';
 
 @Component({

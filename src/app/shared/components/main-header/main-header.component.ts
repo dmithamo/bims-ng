@@ -7,7 +7,7 @@ import {
   RouterLink,
   RouterLinkActive,
 } from '@angular/router';
-import { SvgIconComponent } from '../../ui-components/svg-icon/svg-icon.component';
+import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 import { filter } from 'rxjs';
 
 @Component({
