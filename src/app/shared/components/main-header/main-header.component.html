@@ -2,19 +2,23 @@
   <div class="flex-1 flex flex-col gap-0">
     <h1 class="font-bold text-3xl">{{ pageTitle }}</h1>
 
-    <a
-      tabindex="0"
-      (keyup)="$event.key === 'Enter' && goBack()"
-      (click)="goBack()"
-      class="text-sm text-secondary-200 flex py-1 w-fit">
-      <app-svg-icon iconName="arrow-left" iconClass="w-4 h-4 mr-4" />
-      <span>Back</span>
-    </a>
+    @if (showBackButton) {
+      <a
+        routerLink="javascript:void(0)"
+        (click)="goBack()"
+        class="flex py-1 w-fit text-sm text-secondary-200">
+        <app-svg-icon iconName="arrow-left" iconClass="w-4 h-4 mr-4" />
+        <span>Back</span>
+      </a>
+    }
   </div>
-  <a
-    routerLink="apps"
-    class="font-bold opacity-50 hover:opacity-90"
-    routerLinkActive="opacity-90">
-    <app-svg-icon iconName="drawer" iconClass="w-8 h-8" />
-  </a>
+
+  @if (showAppsButton) {
+    <a
+      routerLink="apps"
+      class="font-bold opacity-50 hover:opacity-90"
+      routerLinkActive="opacity-90">
+      <app-svg-icon iconName="drawer" iconClass="w-8 h-8" />
+    </a>
+  }
 </header>

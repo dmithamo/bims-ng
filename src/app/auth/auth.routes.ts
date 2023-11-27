@@ -3,7 +3,8 @@ import { LoginComponent } from './login/login.component';
 
 export const authRoutes: Routes = [
   {
-    path: 'login',
+    path: '',
+    title: 'Login',
     component: LoginComponent,
   },
 ];

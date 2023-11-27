@@ -24,12 +24,15 @@ export class MainHeaderComponent implements OnInit {
   ) {}
 
   public pageTitle: string = '';
+  public showBackButton: boolean = false; // Figure out when to show
+  public showAppsButton: boolean = false; // Figure out when to show
 
   ngOnInit(): void {
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {
         let currentRoute = this.activeRoute;
+
         while (currentRoute.firstChild) {
           currentRoute = currentRoute.firstChild;
         }
