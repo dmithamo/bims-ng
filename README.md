@@ -21,8 +21,8 @@ bims/
 │   ├── app/
 │   │   ├── components/                   # UI components
 │   │   │   ├── dashboard/                # Dashboard component
-│   │   │   │   ├── dashboard.component.ts
-│   │   │   │   ├── dashboard.component.html
+│   │   │   │   ├── summaries.component.ts
+│   │   │   │   ├── summaries.component.html
 │   │   │   │   └── dashboard.routes.ts
 │   │   │   │
 │   │   │   ├── expense-tracker/          # Expense tracker component
