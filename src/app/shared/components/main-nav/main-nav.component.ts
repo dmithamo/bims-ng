@@ -14,26 +14,26 @@ export class MainNavComponent {
   protected navItems: AppNavItem[] = [
     {
       path: 'dashboard',
-      icon: 'home',
-      name: 'home',
+      name: 'dashboard',
+      icon: 'chart-present',
       permissions: [],
     },
     {
       path: 'transactions',
-      icon: 'list',
       name: 'transactions',
+      icon: 'card',
       permissions: [],
     },
     {
       path: 'budget',
-      icon: 'wallet',
       name: 'budget',
+      icon: 'clipboard',
       permissions: [],
     },
     {
       path: 'profile',
-      icon: 'user',
       name: 'profile',
+      icon: 'user',
       permissions: [],
     },
   ];
