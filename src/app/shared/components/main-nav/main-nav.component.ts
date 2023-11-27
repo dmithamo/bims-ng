@@ -13,25 +13,25 @@ import { AppNavItem } from '../../utils/types';
 export class MainNavComponent {
   protected navItems: AppNavItem[] = [
     {
-      path: 'dashboard',
+      path: '/dashboard',
       name: 'dashboard',
       icon: 'chart-present',
       permissions: [],
     },
     {
-      path: 'transactions',
+      path: '/transactions',
       name: 'transactions',
       icon: 'card',
       permissions: [],
     },
     {
-      path: 'budget',
+      path: '/budget',
       name: 'budget',
       icon: 'clipboard',
       permissions: [],
     },
     {
-      path: 'profile',
+      path: '/profile',
       name: 'profile',
       icon: 'user',
       permissions: [],
