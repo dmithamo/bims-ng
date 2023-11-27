@@ -1,5 +1,7 @@
 @if (label || iconName) {
-  <a [routerLink]="path" class="flex gap-2 opacity-50 hover:opacity-90">
+  <a
+    [routerLink]="path"
+    class="flex items-center justify-start gap-1.5 opacity-50 hover:opacity-90">
     @if (iconName) {
       <app-svg-icon [iconName]="iconName" iconClass="w-4 h-4" />
     }

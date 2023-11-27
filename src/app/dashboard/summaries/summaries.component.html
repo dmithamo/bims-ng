@@ -1,11 +1,6 @@
 <main class="flex flex-col gap-y-10">
   <section>
-    <app-section-header
-      header="Balances"
-      [link]="{
-        path: '/transactions/balances',
-        iconName: 'list'
-      }" />
+    <app-section-header header="Balances" />
     <app-balance-overview />
   </section>
 
@@ -14,6 +9,7 @@
       header="Recent expenses"
       [link]="{
         path: '/transactions/expenses',
+        label: 'See all',
         iconName: 'list'
       }" />
     <app-expense-overview />
