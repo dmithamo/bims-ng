@@ -6,8 +6,8 @@ module.exports = {
       colors: {
         primary: 'rgba(0,0,0,0.75)',
         secondary: {
-          100: '#efefef',
-          200: '#c2c2c2',
+          100: 'rgba(0,0,0,0.50)',
+          200: 'rgba(0,0,0,0.65)',
         },
         accent: '#00a868',
       },

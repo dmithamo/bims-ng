@@ -1,0 +1,18 @@
+<div class="flex justify-between items-center py-2 text-secondary-200">
+  <div class="flex flex-col gap-0">
+    @if (header) {
+      <h1 class="text-2xl">{{ header }}</h1>
+    }
+
+    @if (subheader) {
+      <p class="text-sm text-secondary-200">{{ subheader }}</p>
+    }
+  </div>
+
+  @if (link) {
+    <app-link-button
+      [label]="link.label"
+      [path]="link.path"
+      [iconName]="link.iconName" />
+  }
+</div>

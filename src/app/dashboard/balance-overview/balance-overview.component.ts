@@ -6,6 +6,5 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './balance-overview.component.html',
-  styleUrl: './balance-overview.component.css',
 })
 export class BalanceOverviewComponent {}

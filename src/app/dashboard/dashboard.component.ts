@@ -14,6 +14,5 @@ import { BalanceOverviewComponent } from './balance-overview/balance-overview.co
     BalanceOverviewComponent,
   ],
   templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css',
 })
 export class DashboardComponent {}
