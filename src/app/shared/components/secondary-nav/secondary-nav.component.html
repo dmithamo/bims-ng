@@ -1,0 +1,10 @@
+<nav class="flex justify-between items-center">
+  @for (navItem of navItems; track navItem.path) {
+    <a
+      [routerLink]="navItem.path"
+      class="border-b-gray-300"
+      routerLinkActive="border-b-accent text-accent">
+      {{ navItem.label }}
+    </a>
+  }
+</nav>

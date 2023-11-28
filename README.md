@@ -23,17 +23,17 @@ bims/
 │   │   │   ├── dashboard/                # Dashboard component
 │   │   │   │   ├── summaries.component.ts
 │   │   │   │   ├── summaries.component.html
-│   │   │   │   └── dashboard.routes.ts
+│   │   │   │   └── dashboard.routes.constants.ts
 │   │   │   │
 │   │   │   ├── expense-tracker/          # Expense tracker component
 │   │   │   │   ├── expense-tracker.component.ts
 │   │   │   │   ├── expense-tracker.component.html
-│   │   │   │   └── expense-tracker.routes.ts
+│   │   │   │   └── expense-tracker.routes.constants.ts
 │   │   │   │
 │   │   │   ├── budget-planner/           # Budget planner component
 │   │   │   │   ├── budget-planner.component.ts
 │   │   │   │   ├── budget-planner.component.html
-│   │   │   │   └── budget-planner.routes.ts
+│   │   │   │   └── budget-planner.routes.constants.ts
 │   │   │   │
 │   │   │   └── ...                       # Other components
 │   │   │
@@ -53,7 +53,7 @@ bims/
 │   │   │
 │   │   ├── utils/                        # Utility functions and classes
 │   │   │
-│   │   ├── app.routes.ts                 # Main application routes
+│   │   ├── app.routes.constants.ts                 # Main application routes
 │   │   └── app.component.ts
 │   │
 │   ├── assets/                           # Static assets like images, fonts

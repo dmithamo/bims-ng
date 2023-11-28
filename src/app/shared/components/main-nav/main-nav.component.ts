@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 import { AppNavItem } from '../../utils/types';
+import { APP_ROUTE } from '../../constants/routes.constants';
 
 @Component({
   selector: 'app-main-nav',
@@ -13,26 +14,26 @@ import { AppNavItem } from '../../utils/types';
 export class MainNavComponent {
   protected navItems: AppNavItem[] = [
     {
-      path: '/dashboard',
-      name: 'dashboard',
+      path: APP_ROUTE.dashboard,
+      label: 'dashboard',
       icon: 'chart-present',
       permissions: [],
     },
     {
-      path: '/transactions',
-      name: 'transactions',
+      path: APP_ROUTE.transactions,
+      label: 'transactions',
       icon: 'card',
       permissions: [],
     },
     {
-      path: '/budget',
-      name: 'budget',
+      path: APP_ROUTE.budgets,
+      label: 'budgets',
       icon: 'clipboard',
       permissions: [],
     },
     {
-      path: '/profile',
-      name: 'profile',
+      path: APP_ROUTE.profile,
+      label: 'profile',
       icon: 'user',
       permissions: [],
     },

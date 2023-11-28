@@ -1,12 +1,13 @@
-<nav class="flex justify-between items-center p-6 bg-white shadow-elevated">
+<nav
+  class="flex justify-between items-center px-6 py-4 bg-white shadow-elevated">
   @for (navItem of navItems; track navItem.path) {
     <a
       [routerLink]="navItem.path"
       class="flex items-center opacity-50 nth-child(2)"
       routerLinkActive="opacity-90 text-accent [&>*:nth-child(2)]:inline-block">
-      <app-svg-icon [iconName]="navItem.icon"></app-svg-icon>
+      <app-svg-icon [iconName]="navItem.icon || 'bug'"></app-svg-icon>
       <span class="capitalize ml-2 hidden">
-        {{ navItem.name }}
+        {{ navItem.label }}
       </span>
     </a>
   }
