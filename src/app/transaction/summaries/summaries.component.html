@@ -1,0 +1,33 @@
+<app-page-header pageTitle="Transactions" />
+
+<main class="flex flex-col gap-y-10">
+  <section>
+    <app-section-header
+      header="Income summary"
+      [link]="{
+        path: APP_ROUTE.incomes,
+        iconName: 'square-plus'
+      }" />
+    <app-income-overview />
+  </section>
+
+  <section>
+    <app-section-header
+      header="Recent expenses"
+      [link]="{
+        path: APP_ROUTE.expenses,
+        iconName: 'square-plus'
+      }" />
+    <app-expense-overview />
+  </section>
+
+  <section>
+    <app-section-header
+      header="Balances"
+      [link]="{
+        path: APP_ROUTE.balances,
+        iconName: 'square-plus'
+      }" />
+    <app-balance-overview />
+  </section>
+</main>

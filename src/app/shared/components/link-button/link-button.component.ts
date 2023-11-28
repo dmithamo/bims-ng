@@ -10,7 +10,7 @@ import { SvgIconComponent } from '../svg-icon/svg-icon.component';
   templateUrl: './link-button.component.html',
 })
 export class LinkButtonComponent {
+  @Input() path!: string;
   @Input() label?: string;
-  @Input() path?: string;
   @Input() iconName?: string;
 }

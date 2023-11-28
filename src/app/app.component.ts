@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { environment } from '../environments/environment';
 import { MainNavComponent } from './shared/components/main-nav/main-nav.component';
-import { MainHeaderComponent } from './shared/components/main-header/main-header.component';
+import { PageHeaderComponent } from './shared/components/page-header/page-header.component';
 import { MainFooterComponent } from './shared/components/main-footer/main-footer.component';
 
 @Component({
@@ -13,7 +13,7 @@ import { MainFooterComponent } from './shared/components/main-footer/main-footer
     CommonModule,
     RouterOutlet,
     MainNavComponent,
-    MainHeaderComponent,
+    PageHeaderComponent,
     MainFooterComponent,
   ],
   templateUrl: './app.component.html',

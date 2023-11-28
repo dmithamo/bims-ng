@@ -9,7 +9,7 @@ module.exports = {
           100: 'rgba(0,0,0,0.50)',
           200: 'rgba(0,0,0,0.65)',
         },
-        accent: '#00a868',
+        accent: 'rgb(0,0,0)',
       },
       fontFamily: {
         serif: ['EB Garamond', 'serif'],

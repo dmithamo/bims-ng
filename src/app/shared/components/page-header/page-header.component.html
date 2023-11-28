@@ -1,0 +1,15 @@
+<header class="flex justify-between items-center py-4">
+  <div class="flex items-center gap-x-4">
+    @if (showBackButton) {
+      <a
+        routerLink="javascript:void(0)"
+        (click)="goBack()"
+        class="text-secondary-100 flex items-center -ml-2">
+        <app-svg-icon iconName="chevron-left" iconClass="w-6 h-6" />
+        <span>Back</span>
+      </a>
+    }
+
+    <h1 class="text-3xl">{{ pageTitle }}</h1>
+  </div>
+</header>

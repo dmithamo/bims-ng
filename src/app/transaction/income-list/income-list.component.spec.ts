@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainHeaderComponent } from './main-header.component';
+import { IncomeListComponent } from './income-list.component';
 
-describe('MainHeaderComponent', () => {
-  let component: MainHeaderComponent;
-  let fixture: ComponentFixture<MainHeaderComponent>;
+describe('IncomeListComponent', () => {
+  let component: IncomeListComponent;
+  let fixture: ComponentFixture<IncomeListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MainHeaderComponent],
+      imports: [IncomeListComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(MainHeaderComponent);
+    fixture = TestBed.createComponent(IncomeListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
