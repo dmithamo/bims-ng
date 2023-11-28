@@ -1,11 +1,14 @@
-import { Injectable, signal, WritableSignal } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
+import { AuthRepository } from '../../_repositories/auth/auth.repository';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  public isLoggedIn: WritableSignal<Promise<boolean>>;
-  constructor() {
-    this.isLoggedIn = signal(Promise.resolve(false));
+  public isLoggedIn = signal<boolean>(false);
+  constructor(private authRepository: AuthRepository) {}
+
+  public async validateSessionId(): Promise<boolean> {
+    return Promise.resolve(false);
   }
 }
