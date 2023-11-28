@@ -14,21 +14,21 @@ import { APP_ROUTE } from '../shared/constants/routes.constants';
 export class TransactionComponent {
   public readonly secondaryNavItems: AppNavItem[] = [
     {
-      path: APP_ROUTE.expenses,
-      label: 'Expenses',
-      icon: 'bug',
+      path: APP_ROUTE.incomes,
+      label: 'Incomes',
+      icon: 'folder-plus',
       permissions: [],
     },
     {
-      path: APP_ROUTE.incomes,
-      label: 'Incomes',
-      icon: 'bug',
+      path: APP_ROUTE.expenses,
+      label: 'Expenses',
+      icon: 'folder-minus',
       permissions: [],
     },
     {
       path: APP_ROUTE.balances,
       label: 'Balances',
-      icon: 'bug',
+      icon: 'briefcase',
       permissions: [],
     },
   ];

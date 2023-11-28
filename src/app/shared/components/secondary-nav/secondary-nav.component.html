@@ -1,5 +1,5 @@
 <nav
-  class="w-fit py-4 flex justify-around items-center px-6 rounded shadow-lg gap-x-6 bg-white fixed bottom-16 right-2">
+  class="w-fit py-4 flex justify-around items-center px-6 rounded-lg shadow-lg gap-x-6 bg-white fixed bottom-16 right-2">
   @for (navItem of navItems; track navItem.path) {
     <a
       [routerLink]="navItem.path"
