@@ -4,6 +4,7 @@ import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 import { AppNavItem } from '../../utils/types';
 import { APP_ROUTE } from '../../constants/routes.constants';
+import { AuthService } from '../../../_services/auth/auth.service';
 
 @Component({
   selector: 'app-main-nav',
@@ -38,9 +39,8 @@ export class MainNavComponent {
       permissions: [],
     },
   ];
-  constructor(private router: Router) {}
-
-  isRouteActive(route: string): boolean {
-    return this.router.url.startsWith(`/${route}`);
-  }
+  constructor(
+    private router: Router,
+    protected authService: AuthService,
+  ) {}
 }

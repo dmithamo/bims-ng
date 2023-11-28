@@ -11,7 +11,7 @@ export const loggedInGuard: CanActivateFn = async (route, state) => {
   if (isLoggedOut) {
     await router.navigate([APP_ROUTE.auth, APP_ROUTE.login], {
       queryParams: {
-        redirectTo: state.url,
+        redirectTo: state.url || undefined,
       },
     });
     return false;

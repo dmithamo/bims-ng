@@ -1,17 +1,50 @@
 import { TestBed } from '@angular/core/testing';
-import { CanActivateFn } from '@angular/router';
+import {
+  ActivatedRouteSnapshot,
+  CanActivateFn,
+  RouterStateSnapshot,
+} from '@angular/router';
 
 import { loggedOutGuard } from './logged-out.guard';
+import { AuthService } from '../../_services/auth/auth.service';
 
 describe('loggedOutGuard', () => {
   const executeGuard: CanActivateFn = (...guardParameters) =>
     TestBed.runInInjectionContext(() => loggedOutGuard(...guardParameters));
 
+  let fakeAuthService: jasmine.SpyObj<AuthService>;
+  let fakeActivatedRoute: ActivatedRouteSnapshot;
+  let fakeRouterState: RouterStateSnapshot;
+
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    fakeAuthService = jasmine.createSpyObj('AuthService', ['isLoggedIn']);
+    fakeActivatedRoute = {} as ActivatedRouteSnapshot;
+    fakeRouterState = {} as RouterStateSnapshot;
+
+    TestBed.configureTestingModule({
+      providers: [
+        {
+          provide: AuthService,
+          useValue: fakeAuthService,
+        },
+      ],
+    });
   });
 
   it('should be created', () => {
     expect(executeGuard).toBeTruthy();
+  });
+
+  it('should return false if there is a user logged in', async function () {
+    fakeAuthService.isLoggedIn.and.returnValue(Promise.resolve(true));
+    const result = await executeGuard(fakeActivatedRoute, fakeRouterState);
+
+    expect(result).toBe(false);
+  });
+  it('should return true if there is no user logged in', async function () {
+    fakeAuthService.isLoggedIn.and.returnValue(Promise.resolve(false));
+    const result = await executeGuard(fakeActivatedRoute, fakeRouterState);
+
+    expect(result).toBe(true);
   });
 });
