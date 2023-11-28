@@ -1,5 +1,6 @@
 export enum APP_ROUTE {
-  login = 'auth/login',
+  auth = 'auth',
+  login = 'login',
   dashboard = 'dashboard',
   transactions = 'transactions',
   expenses = 'expenses',

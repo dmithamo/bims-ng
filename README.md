@@ -38,7 +38,7 @@ bims/
 │   │   │   └── ...                       # Other components
 │   │   │
 │   │   ├── services/                     # Business logic services
-│   │   │   ├── auth.service.ts           # Authentication service
+│   │   │   ├── auth.repository.ts           # Authentication service
 │   │   │   ├── budget.service.ts         # Budget-related business logic
 │   │   │   ├── expense.service.ts        # Expense-related business logic
 │   │   │   └── ...                       # Other business logic services
