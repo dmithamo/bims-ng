@@ -1,6 +1,6 @@
 <header class="flex justify-between items-center py-4">
   <div class="flex items-center gap-x-4">
-    @if (showBackButton) {
+    @if (!hideBackButton) {
       <a
         routerLink="javascript:void(0)"
         (click)="goBack()"

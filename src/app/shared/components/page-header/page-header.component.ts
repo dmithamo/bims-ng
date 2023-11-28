@@ -11,10 +11,9 @@ import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 })
 export class PageHeaderComponent {
   @Input() pageTitle!: string;
+  @Input() hideBackButton?: boolean;
 
   constructor(private location: Location) {}
-
-  public showBackButton: boolean = true; // Figure out when to show
 
   goBack(): void {
     this.location.back();
