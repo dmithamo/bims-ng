@@ -5,8 +5,6 @@ import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 import { AppNavItem } from '../../utils/types';
 import { APP_ROUTE } from '../../constants/routes.constants';
 
-type MainNavItem = { icon: string; label: string } & AppNavItem;
-
 @Component({
   selector: 'app-main-nav',
   standalone: true,
@@ -14,7 +12,7 @@ type MainNavItem = { icon: string; label: string } & AppNavItem;
   templateUrl: './main-nav.component.html',
 })
 export class MainNavComponent {
-  protected navItems: MainNavItem[] = [
+  protected navItems: AppNavItem[] = [
     {
       path: APP_ROUTE.dashboard,
       label: 'dashboard',

@@ -1,10 +1,14 @@
-<nav class="flex justify-between items-center">
+<nav
+  class="w-fit py-4 flex justify-around items-center px-6 rounded shadow-lg gap-x-6 bg-white fixed bottom-16 right-2">
   @for (navItem of navItems; track navItem.path) {
     <a
       [routerLink]="navItem.path"
-      class="border-b-gray-300"
-      routerLinkActive="border-b-accent text-accent">
-      {{ navItem.label }}
+      class="flex items-center opacity-50"
+      routerLinkActive="opacity-90 text-accent [&>*:nth-child(2)]:inline-block">
+      <app-svg-icon [iconName]="navItem.icon"></app-svg-icon>
+      <span class="capitalize ml-2 hidden">
+        {{ navItem.label }}
+      </span>
     </a>
   }
 </nav>

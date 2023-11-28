@@ -16,16 +16,19 @@ export class TransactionComponent {
     {
       path: APP_ROUTE.expenses,
       label: 'Expenses',
+      icon: 'bug',
       permissions: [],
     },
     {
       path: APP_ROUTE.incomes,
       label: 'Incomes',
+      icon: 'bug',
       permissions: [],
     },
     {
       path: APP_ROUTE.balances,
       label: 'Balances',
+      icon: 'bug',
       permissions: [],
     },
   ];
