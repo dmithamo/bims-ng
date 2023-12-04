@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconService } from '../../../core/services/icon.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
@@ -9,7 +9,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   imports: [CommonModule],
   templateUrl: './svg-icon.component.html',
 })
-export class SvgIconComponent implements OnInit {
+export class SvgIconComponent implements OnInit, OnChanges {
   @Input() iconName: string = '';
   @Input() iconClass: string = '';
 
@@ -20,11 +20,19 @@ export class SvgIconComponent implements OnInit {
     private sanitizer: DomSanitizer,
   ) {}
 
-  ngOnInit() {
-    this.iconService.getIcon(this.iconName).subscribe(svgContent => {
+  private fetchIcon(name: string) {
+    this.iconService.getIcon(name).subscribe(svgContent => {
       this.sanitizedSvgContent = svgContent
         ? this.sanitizer.bypassSecurityTrustHtml(svgContent)
         : null;
     });
+  }
+
+  ngOnInit() {
+    this.fetchIcon(this.iconName);
+  }
+
+  ngOnChanges() {
+    this.fetchIcon(this.iconName);
   }
 }

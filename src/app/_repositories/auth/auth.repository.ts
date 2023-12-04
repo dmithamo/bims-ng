@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { StorageService } from '../../_services/storage/storage.service';
 import {
+  Credentials,
   SessionId,
   SessionUser,
   UserRole,
@@ -36,13 +37,7 @@ export class AuthRepository {
     this.storageService.remove(SESSION_ID_KEY);
   }
 
-  async login({
-    username,
-    password,
-  }: {
-    password: string;
-    username: string;
-  }): Promise<SessionUser> {
+  async login({ username, password }: Credentials): Promise<SessionUser> {
     // api login here
     console.log(password);
     const sessionId: SessionId = `${password}-000000-000000-000000-000000`;

@@ -1,6 +1,6 @@
 import { computed, Injectable, signal, WritableSignal } from '@angular/core';
 import { AuthRepository } from '../../_repositories/auth/auth.repository';
-import { SessionUser } from '../../shared/models/auth.model';
+import { Credentials, SessionUser } from '../../shared/models/auth.model';
 
 @Injectable({
   providedIn: 'root',
@@ -25,7 +25,12 @@ export class AuthService {
     this.sessionUser.set(await this.authRepository.getSessionUser());
   }
 
-  async login({ username, password }: { password: string; username: string }) {
+  async login({ username, password }: Credentials) {
+    console.log({ username, password }, '<<LOGIN ATTEMPTED');
+    if (username !== 'b@dmithamo.dev') {
+      throw Error('Invalid credentials');
+    }
+
     this.sessionUser.set(
       await this.authRepository.login({
         username,

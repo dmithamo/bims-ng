@@ -13,3 +13,12 @@ export enum UserRole {
   admin = 'admin',
   user = 'user',
 }
+
+export type Credentials = {
+  username: string;
+  password: string;
+};
+
+export type AuthError = {
+  message: string;
+};
