@@ -8,6 +8,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { SvgIconComponent } from '../../shared/components/svg-icon/svg-icon.component';
 import { AuthError, Credentials } from '../../shared/models/auth.model';
 import { LogoComponent } from '../../shared/components/logo/logo.component';
+import { MainFooterComponent } from '../../shared/components/main-footer/main-footer.component';
 
 @Component({
   selector: 'app-login',
@@ -19,6 +20,7 @@ import { LogoComponent } from '../../shared/components/logo/logo.component';
     SvgIconComponent,
     LogoComponent,
     RouterLink,
+    MainFooterComponent,
   ],
   templateUrl: './login.component.html',
 })
