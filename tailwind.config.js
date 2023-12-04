@@ -12,7 +12,10 @@ module.exports = {
         accent: 'rgb(0,0,0)',
       },
       fontFamily: {
-        serif: ['EB Garamond', 'serif'],
+        metric: ['Metric-Regular', 'serif'],
+        bold: ['Metric-Bold', 'serif'],
+        italic: ['Metric-RegularItalic', 'serif'],
+        chronos: ['ChronosSerif-Hatched', 'serif'],
       },
       boxShadow: {
         elevated: '0 -2px 6px rgba(0, 0, 0, 0.1)',

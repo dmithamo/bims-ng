@@ -44,5 +44,5 @@ Thumbs.db
 # Env files
 environment.ts
 
-# SVG
-*.svg
+# icons and fonts
+assets/
