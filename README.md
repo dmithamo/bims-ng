@@ -14,67 +14,171 @@ This project aims to develop a comprehensive budgeting and expense tracking appl
 
 ## Project Directory Structure
 
-```
-bims/
-│
-├── src/
-│   ├── app/
-│   │   ├── components/                   # UI components
-│   │   │   ├── dashboard/                # Dashboard component
-│   │   │   │   ├── summaries.component.ts
-│   │   │   │   ├── summaries.component.html
-│   │   │   │   └── dashboard.routes.constants.ts
-│   │   │   │
-│   │   │   ├── expense-tracker/          # Expense tracker component
-│   │   │   │   ├── expense-tracker.component.ts
-│   │   │   │   ├── expense-tracker.component.html
-│   │   │   │   └── expense-tracker.routes.constants.ts
-│   │   │   │
-│   │   │   ├── budget-planner/           # Budget planner component
-│   │   │   │   ├── budget-planner.component.ts
-│   │   │   │   ├── budget-planner.component.html
-│   │   │   │   └── budget-planner.routes.constants.ts
-│   │   │   │
-│   │   │   └── ...                       # Other components
-│   │   │
-│   │   ├── services/                     # Business logic services
-│   │   │   ├── auth.repository.ts           # Authentication service
-│   │   │   ├── budget.service.ts         # Budget-related business logic
-│   │   │   ├── expense.service.ts        # Expense-related business logic
-│   │   │   └── ...                       # Other business logic services
-│   │   │
-│   │   ├── repositories/                 # Data access logic
-│   │   │   ├── user.repository.ts        # Data access methods for user data
-│   │   │   ├── budget.repository.ts      # Data access methods for budget data
-│   │   │   ├── expense.repository.ts     # Data access methods for expense data
-│   │   │   └── ...                       # Other data access repositories
-│   │   │
-│   │   ├── models/                       # Data models and interfaces
-│   │   │
-│   │   ├── utils/                        # Utility functions and classes
-│   │   │
-│   │   ├── app.routes.constants.ts                 # Main application routes
-│   │   └── app.component.ts
-│   │
-│   ├── assets/                           # Static assets like images, fonts
-│   ├── styles/                           # Global styles
-│   ├── index.html
-│   └── main.ts
-│
-├── environments/                         # Environment configurations
-│   ├── environment.ts                    # Environment configuration file
-│   └── environment.example.ts            # Example/template environment file
-│
-├── scripts/                              # Automation and utility scripts
-│   ├── update-version.sh                 # Script for updating application version
-│   └── setup-local.sh                    # Script for setting up local environment
-│
-├── e2e/                                  # End-to-end tests
-│
-├── angular.json
-├── tsconfig.json
-├── package.json
-└── ...
+```bash
+tree ./src --filelimit=20
+
+# outputs the following
+
+./src
+├── app
+│   ├── _guards
+│   │   └── auth
+│   │       ├── logged-in.guard.spec.ts
+│   │       ├── logged-in.guard.ts
+│   │       ├── logged-out.guard.spec.ts
+│   │       └── logged-out.guard.ts
+│   ├── _repositories
+│   │   └── auth
+│   │       ├── auth.repository.spec.ts
+│   │       └── auth.repository.ts
+│   ├── _services
+│   │   ├── auth
+│   │   │   ├── auth.service.spec.ts
+│   │   │   └── auth.service.ts
+│   │   └── storage
+│   │       ├── storage.service.spec.ts
+│   │       └── storage.service.ts
+│   ├── app.component.html
+│   ├── app.component.spec.ts
+│   ├── app.component.ts
+│   ├── app.config.ts
+│   ├── app.routes.ts
+│   ├── auth
+│   │   ├── auth.component.html
+│   │   ├── auth.component.spec.ts
+│   │   ├── auth.component.ts
+│   │   ├── auth.routes.ts
+│   │   └── login
+│   │       ├── login.component.html
+│   │       ├── login.component.spec.ts
+│   │       └── login.component.ts
+│   ├── budget
+│   │   ├── budget-details
+│   │   │   ├── budget-details.component.html
+│   │   │   ├── budget-details.component.spec.ts
+│   │   │   └── budget-details.component.ts
+│   │   ├── budget-list
+│   │   │   ├── budget-list.component.html
+│   │   │   ├── budget-list.component.spec.ts
+│   │   │   └── budget-list.component.ts
+│   │   ├── budget.component.html
+│   │   ├── budget.component.spec.ts
+│   │   ├── budget.component.ts
+│   │   ├── budget.routes.ts
+│   │   └── create-budget
+│   │       ├── create-budget.component.html
+│   │       ├── create-budget.component.spec.ts
+│   │       └── create-budget.component.ts
+│   ├── core
+│   │   └── services
+│   │       ├── icon.service.spec.ts
+│   │       └── icon.service.ts
+│   ├── dashboard
+│   │   ├── dashboard.component.html
+│   │   ├── dashboard.component.spec.ts
+│   │   ├── dashboard.component.ts
+│   │   ├── dashboard.routes.ts
+│   │   └── insights
+│   │       ├── insights.component.html
+│   │       ├── insights.component.spec.ts
+│   │       └── insights.component.ts
+│   ├── not-found
+│   │   ├── not-found.component.html
+│   │   ├── not-found.component.spec.ts
+│   │   └── not-found.component.ts
+│   ├── shared
+│   │   ├── components
+│   │   │   ├── link-button
+│   │   │   │   ├── link-button.component.html
+│   │   │   │   ├── link-button.component.spec.ts
+│   │   │   │   └── link-button.component.ts
+│   │   │   ├── logo
+│   │   │   │   ├── logo.component.html
+│   │   │   │   ├── logo.component.spec.ts
+│   │   │   │   └── logo.component.ts
+│   │   │   ├── main-footer
+│   │   │   │   ├── main-footer.component.html
+│   │   │   │   ├── main-footer.component.spec.ts
+│   │   │   │   └── main-footer.component.ts
+│   │   │   ├── main-nav
+│   │   │   │   ├── main-nav.component.html
+│   │   │   │   ├── main-nav.component.spec.ts
+│   │   │   │   ├── main-nav.component.ts
+│   │   │   │   └── user.svg
+│   │   │   ├── page-header
+│   │   │   │   ├── page-header.component.html
+│   │   │   │   ├── page-header.component.spec.ts
+│   │   │   │   └── page-header.component.ts
+│   │   │   ├── secondary-nav
+│   │   │   │   ├── secondary-nav.component.html
+│   │   │   │   ├── secondary-nav.component.spec.ts
+│   │   │   │   └── secondary-nav.component.ts
+│   │   │   ├── section-header
+│   │   │   │   ├── section-header.component.html
+│   │   │   │   ├── section-header.component.spec.ts
+│   │   │   │   └── section-header.component.ts
+│   │   │   └── svg-icon
+│   │   │       ├── svg-icon.component.html
+│   │   │       ├── svg-icon.component.spec.ts
+│   │   │       └── svg-icon.component.ts
+│   │   ├── constants
+│   │   │   └── routes.constants.ts
+│   │   ├── models
+│   │   │   └── auth.model.ts
+│   │   └── utils
+│   │       └── types.ts
+│   └── transaction
+│       ├── balance-list
+│       │   ├── balance-list.component.html
+│       │   ├── balance-list.component.spec.ts
+│       │   └── balance-list.component.ts
+│       ├── balance-overview
+│       │   ├── balance-overview.component.html
+│       │   ├── balance-overview.component.spec.ts
+│       │   └── balance-overview.component.ts
+│       ├── create-transaction
+│       │   ├── create-transaction.component.html
+│       │   ├── create-transaction.component.spec.ts
+│       │   └── create-transaction.component.ts
+│       ├── expense-list
+│       │   ├── expense-list.component.html
+│       │   ├── expense-list.component.spec.ts
+│       │   └── expense-list.component.ts
+│       ├── expense-overview
+│       │   ├── expense-overview.component.html
+│       │   ├── expense-overview.component.spec.ts
+│       │   └── expense-overview.component.ts
+│       ├── income-list
+│       │   ├── income-list.component.html
+│       │   ├── income-list.component.spec.ts
+│       │   └── income-list.component.ts
+│       ├── income-overview
+│       │   ├── income-overview.component.html
+│       │   ├── income-overview.component.spec.ts
+│       │   └── income-overview.component.ts
+│       ├── summaries
+│       │   ├── summaries.component.html
+│       │   ├── summaries.component.spec.ts
+│       │   └── summaries.component.ts
+│       ├── transaction-details
+│       │   ├── transaction-details.component.html
+│       │   ├── transaction-details.component.spec.ts
+│       │   └── transaction-details.component.ts
+│       ├── transaction.component.html
+│       ├── transaction.component.spec.ts
+│       ├── transaction.component.ts
+│       └── transaction.routes.ts
+├── assets
+│   └── icons  [24 entries exceeds filelimit, not opening dir]
+├── environments
+│   ├── environment.example
+│   └── environment.ts
+├── favicon.ico
+├── index.html
+├── main.ts
+└── styles.css
+
+46 directories, 112 files
 ```
 
 ## Technologies Used
