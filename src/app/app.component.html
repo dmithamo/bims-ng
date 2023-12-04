@@ -1,8 +1,10 @@
-<div class="w-full flex justify-center">
-  <main class="relative h-screen flex flex-col bg-slate-100 w-full sm:w-2/3">
+<div class="w-full sm:w-2/3 flex flex-col relative">
+  <main class="relative h-screen flex flex-col bg-slate-100">
     <section class="flex-1 px-6 pt-4">
       <router-outlet></router-outlet>
     </section>
     <app-main-nav />
   </main>
+
+  <app-main-footer />
 </div>

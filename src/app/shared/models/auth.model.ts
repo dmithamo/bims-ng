@@ -1,7 +1,5 @@
 export type SessionUser = {
   username: string;
-  email: string;
-  role: UserRole;
   permissions: string[];
   avatar?: string;
 };

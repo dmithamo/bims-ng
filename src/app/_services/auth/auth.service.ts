@@ -26,11 +26,6 @@ export class AuthService {
   }
 
   async login({ username, password }: Credentials) {
-    console.log({ username, password }, '<<LOGIN ATTEMPTED');
-    if (username !== 'b@dmithamo.dev') {
-      throw Error('Invalid credentials');
-    }
-
     this.sessionUser.set(
       await this.authRepository.login({
         username,

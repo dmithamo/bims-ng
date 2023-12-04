@@ -4,7 +4,6 @@ import {
   Credentials,
   SessionId,
   SessionUser,
-  UserRole,
 } from '../../shared/models/auth.model';
 
 const SESSION_ID_KEY = 'SESSION_ID';
@@ -25,12 +24,7 @@ export class AuthRepository {
       return null;
     }
 
-    return Promise.resolve({
-      username: 'bmithamo',
-      email: 'b@dmithamo.dev',
-      role: UserRole.superAdmin,
-      permissions: ['*::read', '*::write', '*::delete'],
-    });
+    return Promise.resolve(null);
   }
 
   removeSessionId() {
@@ -38,16 +32,11 @@ export class AuthRepository {
   }
 
   async login({ username, password }: Credentials): Promise<SessionUser> {
-    // api login here
-    console.log(password);
-    const sessionId: SessionId = `${password}-000000-000000-000000-000000`;
-    this.storageService.set(SESSION_ID_KEY, sessionId);
-
+    // TODO: api login here
+    console.log({ password });
     return Promise.resolve({
       username,
-      email: 'b@dmithamo.dev',
-      role: UserRole.superAdmin,
-      permissions: ['*::read', '*::write', '*::delete'],
+      permissions: [],
     });
   }
 }
