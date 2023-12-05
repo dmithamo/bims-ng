@@ -97,7 +97,7 @@ tree ./src --filelimit=20
 │   │   │   │   ├── logo.component.spec.ts
 │   │   │   │   └── logo.component.ts
 │   │   │   ├── main-footer
-│   │   │   │   ├── main-footer.component.html
+│   │   │   │   ├── main-header.component.html
 │   │   │   │   ├── main-footer.component.spec.ts
 │   │   │   │   └── main-footer.component.ts
 │   │   │   ├── main-nav

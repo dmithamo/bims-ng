@@ -25,7 +25,7 @@ export class AuthService {
     this.sessionUser.set(await this.authRepository.getSessionUser());
   }
 
-  async login({ username, password }: Credentials) {
+  public async login({ username, password }: Credentials) {
     this.sessionUser.set(
       await this.authRepository.login({
         username,
@@ -37,5 +37,10 @@ export class AuthService {
   public async logout(): Promise<void> {
     this.authRepository.removeSessionId();
     this.sessionUser.set(null);
+  }
+
+  public async requestPasswordResetLink(username: string) {
+    // email service sends reset email
+    console.info(`Email sent: ${username}`);
   }
 }
