@@ -21,17 +21,9 @@ import { AuthService } from '../../_services/auth/auth.service';
   templateUrl: './forgot-password.component.html',
 })
 export class ForgotPasswordComponent {
-  protected readonly APP_ROUTE = APP_ROUTE;
-
-  constructor(
-    private fb: FormBuilder,
-    private authService: AuthService,
-  ) {}
-
   requestResetLinkForm = this.fb.nonNullable.group({
     username: ['', [Validators.required, Validators.email]],
   });
-
   newPasswordForm = this.fb.nonNullable.group({
     password: [
       '',
@@ -45,18 +37,28 @@ export class ForgotPasswordComponent {
     ],
     repeatPassword: [''],
   });
+  resetLinkError = signal<string | null>(null);
+  hasRequestedLinkSuccessfully = signal<boolean>(false);
+  protected readonly APP_ROUTE = APP_ROUTE;
+
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+  ) {}
 
   get username() {
     return this.requestResetLinkForm.controls.username;
   }
 
-  resetLinkError = signal<string | null>(null);
-  hasRequestedLinkSuccessfully = signal<boolean>(false);
   changeHasRequestedLinkSuccessfully(status: boolean) {
     this.hasRequestedLinkSuccessfully.set(status);
   }
 
   async requestResetLink() {
+    this.requestResetLinkForm.markAllAsTouched();
+
+    if (this.requestResetLinkForm.invalid) return;
+
     try {
       await this.authService.requestPasswordResetLink(this.username.value);
       this.changeHasRequestedLinkSuccessfully(true);
