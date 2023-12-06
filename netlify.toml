@@ -2,6 +2,3 @@
 from = "/*"
 to = "/index.html"
 status = 200
-
-[build.environment]
-  NG_APP_VERSION="sed -i \"$(git rev-parse --short HEAD)\""
