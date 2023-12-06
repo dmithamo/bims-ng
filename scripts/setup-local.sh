@@ -6,7 +6,7 @@
 
 # Copy the example environment file if it doesn't exist
 if [ ! -e "src/environments/environment.ts" ] ; then
-    cp src/environments/environment.example.ts src/environments/environment.ts
+    cp src/environments/environment.example src/environments/environment.ts
 fi
 
 # Create the SSL certificate if it doesn't exist
@@ -15,3 +15,5 @@ if [ ! -e "local.bims.dmithamo.dev.pem" ] ; then
   mkcert -install
   mkcert local.bims.dmithamo.dev
 fi
+
+pnpm run update-version
