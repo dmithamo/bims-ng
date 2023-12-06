@@ -1,4 +1,7 @@
 # Bims
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4f27d267-67c6-4b2a-9dc8-4b046085d605/deploy-status)](https://app.netlify.com/sites/dbims/deploys)
+
+## Intro
 
 Behold BIMS, your means for bringing order to your finances (and other areas of your life, in future)
 
