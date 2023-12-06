@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/shared/constants/routes.constants.ts"],
+  "sourcesContent": ["export enum APP_ROUTE {\n  auth = 'auth',\n  login = 'login',\n  forgotPassword = 'forgot-password',\n  passwordResetLinkSent = 'password-reset-link-sent',\n  createPassword = 'reset-password',\n  dashboard = 'dashboard',\n  transactions = 'transactions',\n  expenses = 'expenses',\n  incomes = 'incomes',\n  balances = 'balances',\n  budgets = 'budgets',\n  profile = 'profile',\n}\n"],
+  "mappings": ";AAAA,IAAYA,YAAZ,yBAAYA,YAAS;AACnBA,EAAAA,WAAA,MAAA,IAAA;AACAA,EAAAA,WAAA,OAAA,IAAA;AACAA,EAAAA,WAAA,gBAAA,IAAA;AACAA,EAAAA,WAAA,uBAAA,IAAA;AACAA,EAAAA,WAAA,gBAAA,IAAA;AACAA,EAAAA,WAAA,WAAA,IAAA;AACAA,EAAAA,WAAA,cAAA,IAAA;AACAA,EAAAA,WAAA,UAAA,IAAA;AACAA,EAAAA,WAAA,SAAA,IAAA;AACAA,EAAAA,WAAA,UAAA,IAAA;AACAA,EAAAA,WAAA,SAAA,IAAA;AACAA,EAAAA,WAAA,SAAA,IAAA;AAAmB,SAZTA;AAaZ,EAbYA,aAAS,CAAA,CAAA;",
+  "names": ["APP_ROUTE"]
+}
