@@ -3,5 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: 'Hedvig Letters Serif', serif;
+  font-family: 'goudy-bookletter-1911', serif;
+  font-weight: 400;
+  font-style: normal;
 }
