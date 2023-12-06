@@ -2,22 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'Metric-Bold';
-  src: url('assets/fonts/Metric-Bold.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Metric-Regular';
-  src: url('assets/fonts/Metric-Regular.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Metric-RegularItalic';
-  src: url('assets/fonts/Metric-RegularItalic.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'ChronosSerif-Hatched';
-  src: url('assets/fonts/ChronosSerif-Hatched.ttf') format('truetype');
+body {
+  font-family: 'Mulish', sans-serif;
 }
