@@ -49,3 +49,6 @@ environments/
 # SSL Key and Cert
 *.pem
 
+
+# Local Netlify folder
+.netlify
