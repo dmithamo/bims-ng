@@ -10,7 +10,7 @@
     "test:ci": "ng test --no-watch --no-progress --browsers=ChromeHeadless --code-coverage",
     "lint": "ng lint",
     "format": "prettier ./src/app --write",
-    "prepare": "is-ci || husky install",
+    "prepare": "husky install",
     "update-version": "sh scripts/update-version.sh",
     "setup-local": "sh scripts/setup-local.sh"
   },
@@ -27,7 +27,6 @@
     "@angular/platform-browser": "^17.0.0",
     "@angular/platform-browser-dynamic": "^17.0.0",
     "@angular/router": "^17.0.0",
-    "is-ci": "^3.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"
