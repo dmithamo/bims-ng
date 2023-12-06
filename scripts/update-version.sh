@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ -e "src/environments/environment.ts" ] ; then
-  sed -i '' "s/version:.*/version: \'$(git rev-parse --short HEAD)\',/" src/environments/environment.ts
+if [ -e ".env" ] ; then
+  sed -i '' "s/NG_APP_VERSION=.*/NG_APP_VERSION=\'$(git rev-parse --short HEAD)\',/" .env
 fi
 

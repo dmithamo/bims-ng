@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { environment } from '../../../../environments/environment';
 import { LogoComponent } from '../logo/logo.component';
 
 @Component({
@@ -10,5 +9,5 @@ import { LogoComponent } from '../logo/logo.component';
   templateUrl: './main-footer.component.html',
 })
 export class MainFooterComponent {
-  public appVersion = environment.version;
+  public appVersion = import.meta.env.NG_APP_VERSION;
 }

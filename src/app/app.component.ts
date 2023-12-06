@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { environment } from '../environments/environment';
 import { MainNavComponent } from './shared/components/main-nav/main-nav.component';
 import { PageHeaderComponent } from './shared/components/page-header/page-header.component';
 import { MainFooterComponent } from './shared/components/main-footer/main-footer.component';
@@ -20,5 +19,4 @@ import { MainFooterComponent } from './shared/components/main-footer/main-footer
 })
 export class AppComponent {
   title = 'bims';
-  public version = environment.version;
 }

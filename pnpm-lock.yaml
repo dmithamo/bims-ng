@@ -64,6 +64,9 @@ devDependencies:
   '@angular/compiler-cli':
     specifier: ^17.0.0
     version: 17.0.3(@angular/compiler@17.0.3)(typescript@5.2.2)
+  '@ngx-env/builder':
+    specifier: 17.0.2-alpha.0
+    version: 17.0.2-alpha.0(esbuild@0.19.5)(webpack@5.89.0)
   '@types/jasmine':
     specifier: ~5.1.0
     version: 5.1.2
@@ -1819,6 +1822,33 @@ packages:
     engines: {node: '>=10.0.0'}
     dev: true
 
+  /@dotenv-run/core@1.2.3:
+    resolution: {integrity: sha512-i4eV8YgNqCkdxGvPaGDpKlGLBxs/lBtY3VwGwUj8cJAfKDx5Mi6NzeYfkfKdKgTqQI2zoucd9Iyt85DoOWFHVw==}
+    dependencies:
+      chalk: 4.1.2
+      dotenv: 16.3.1
+      dotenv-expand: 10.0.0
+      find-up: 5.0.0
+    dev: true
+
+  /@dotenv-run/esbuild@1.2.3(esbuild@0.19.5):
+    resolution: {integrity: sha512-uweCl7mIfQ+KBpXhQxnIUBttz4mgPxhsKNzIdPSI70PwIT4n5rhCdAVDZZO1LUGNKukSUFdzFKKUqQSYD3sIiA==}
+    peerDependencies:
+      esbuild: ^0.19.5
+    dependencies:
+      '@dotenv-run/core': 1.2.3
+      esbuild: 0.19.5
+    dev: true
+
+  /@dotenv-run/webpack@1.2.3(webpack@5.89.0):
+    resolution: {integrity: sha512-HXone7Vvt8ZyzVMrtdZruC31LgLH+ICa2/i8eB+u17QDnssGExCDQq9w+Sfd2oaQPvKeGehzvnnIGjWKv7Rcyw==}
+    peerDependencies:
+      webpack: ^5.0.0
+    dependencies:
+      '@dotenv-run/core': 1.2.3
+      webpack: 5.89.0(esbuild@0.19.5)
+    dev: true
+
   /@esbuild/android-arm64@0.18.20:
     resolution: {integrity: sha512-Nz4rJcchGDtENV0eMKUNa6L12zz2zBDXuhj/Vjh18zGqB44Bi7MBMSXjgunJgjRhCmKOjnPuZp4Mb6OKqtMHLQ==}
     engines: {node: '>=12'}
@@ -2371,6 +2401,17 @@ packages:
       '@angular/compiler-cli': 17.0.3(@angular/compiler@17.0.3)(typescript@5.2.2)
       typescript: 5.2.2
       webpack: 5.89.0(esbuild@0.19.5)
+    dev: true
+
+  /@ngx-env/builder@17.0.2-alpha.0(esbuild@0.19.5)(webpack@5.89.0):
+    resolution: {integrity: sha512-O5ly2sSasqGPaeRi93v0vEJypaRKsfycsaZNhZsDRhGPnoMWhQ/Y1oY9GIeHhTV01KZpXg8ILEKtfoFGNgdeLg==}
+    dependencies:
+      '@dotenv-run/esbuild': 1.2.3(esbuild@0.19.5)
+      '@dotenv-run/webpack': 1.2.3(webpack@5.89.0)
+      glob: 10.3.10
+    transitivePeerDependencies:
+      - esbuild
+      - webpack
     dev: true
 
   /@nodelib/fs.scandir@2.1.5:
