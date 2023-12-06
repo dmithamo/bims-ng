@@ -6,3 +6,5 @@ export type AppNavItem = {
   icon: string;
   permissions: string[];
 };
+
+export type UUID = ReturnType<typeof crypto.randomUUID>;

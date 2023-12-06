@@ -1,6 +1,7 @@
 import { computed, Injectable, signal, WritableSignal } from '@angular/core';
 import { AuthRepository } from '../../_repositories/auth/auth.repository';
 import { Credentials, SessionUser } from '../../shared/models/auth.model';
+import { UUID } from '../../shared/utils/types';
 
 @Injectable({
   providedIn: 'root',
@@ -40,7 +41,10 @@ export class AuthService {
   }
 
   public async requestPasswordResetLink(username: string) {
-    // email service sends reset email
-    console.info(`Email sent: ${username}`);
+    this.authRepository.requestPasswordResetLink(username);
+  }
+
+  public async createPassword(password: string, token: UUID) {
+    this.authRepository.createPassword(password, token);
   }
 }

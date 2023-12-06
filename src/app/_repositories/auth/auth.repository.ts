@@ -5,6 +5,7 @@ import {
   SessionId,
   SessionUser,
 } from '../../shared/models/auth.model';
+import { UUID } from '../../shared/utils/types';
 
 const SESSION_ID_KEY = 'SESSION_ID';
 
@@ -33,10 +34,21 @@ export class AuthRepository {
 
   async login({ username, password }: Credentials): Promise<SessionUser> {
     // TODO: api login here
-    console.log({ password });
+    console.info({ password });
     return Promise.resolve({
       username,
       permissions: [],
     });
+  }
+
+  createPassword(password: string, token: UUID) {
+    // TODO: api create password here
+    console.info(`New password created: ${password}::${token}`);
+  }
+
+  requestPasswordResetLink(username: string) {
+    // TODO: api generate token
+    // TODO: email service sends token
+    console.info(`Link sent! ${username}`);
   }
 }
