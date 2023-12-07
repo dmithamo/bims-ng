@@ -1,4 +1,5 @@
 export enum APP_ROUTE {
+  root = '/',
   auth = 'auth',
   login = 'login',
   forgotPassword = 'forgot-password',

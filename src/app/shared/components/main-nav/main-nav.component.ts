@@ -28,11 +28,10 @@ import { filter, Subscription } from 'rxjs';
 export class MainNavComponent implements OnDestroy {
   public showMenu = signal(false);
   public currentNavItem = signal<AppNavItem | null>(null);
+  public showLogo = signal(false);
 
   public menuDrawerIconName = computed(() => {
-    if (!this.currentNavItem()) return 'bars';
-
-    return this.showMenu() ? 'close' : '';
+    return this.showMenu() ? 'close' : 'bars';
   });
 
   protected navItems: AppNavItem[] = [
@@ -72,6 +71,7 @@ export class MainNavComponent implements OnDestroy {
       .subscribe(event => {
         const currentPath = (event as NavigationEnd).url;
 
+        this.showLogo.set(currentPath === APP_ROUTE.root);
         this.currentNavItem.set(
           this.navItems.find(item => currentPath.startsWith(`/${item.path}`)) ??
             null,
