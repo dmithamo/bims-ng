@@ -3,31 +3,31 @@
 <main class="flex flex-col gap-y-10">
   <section>
     <app-section-header
-      header="Income summary"
       [link]="{
         path: APP_ROUTE.incomes,
-        iconName: 'square-plus'
-      }" />
+        iconName: 'list'
+      }"
+      header="Income summary" />
     <app-income-overview />
   </section>
 
   <section>
     <app-section-header
-      header="Recent expenses"
       [link]="{
         path: APP_ROUTE.expenses,
-        iconName: 'square-plus'
-      }" />
+        iconName: 'list'
+      }"
+      header="Recent expenses" />
     <app-expense-overview />
   </section>
 
   <section>
     <app-section-header
-      header="Balances"
       [link]="{
         path: APP_ROUTE.balances,
-        iconName: 'square-plus'
-      }" />
+        iconName: 'list'
+      }"
+      header="Balances" />
     <app-balance-overview />
   </section>
 </main>

@@ -1,19 +1,31 @@
 @if (authService.isLoggedIn()) {
   <nav
-    class="w-full flex justify-between items-center py-2 px-3 bg-white shadow-elevated fixed bottom-0 right-0 z-10">
+    class="w-full flex items-center justify-between py-1 px-3 text-accent bg-white shadow-elevated fixed bottom-0 right-0 z-10">
     <app-logo (click)="showMenu() ? toggleShowMenu() : undefined" />
 
-    <app-svg-icon
-      (click)="toggleShowMenu()"
-      iconClass="w-8 h-8 cursor-pointer"
-      [iconName]="menuDrawerIconName()" />
+    @if (!showMenu()) {
+      <a
+        [routerLink]="undefined"
+        (click)="toggleShowMenu()"
+        class="flex items-center gap-x-2">
+        <app-svg-icon [iconName]="currentNavItem()!.icon" />
+        <span class="capitalize">{{ currentNavItem()!.label }}</span>
+      </a>
+    }
+
+    @if (showMenu()) {
+      <app-svg-icon
+        (click)="toggleShowMenu()"
+        iconClass="w-8 h-8 cursor-pointer"
+        [iconName]="menuDrawerIconName()" />
+    }
   </nav>
 
   @if (showMenu()) {
     <div
-      class="fixed right-0 bottom-16 w-full h-screen bg-gray-200/75 flex flex-col justify-end items-start">
+      class="fixed right-0 bottom-16 w-full h-screen bg-gray-200/75 flex flex-col justify-end items-start sm:items-end">
       <div
-        class="w-full h-50 bg-slate-200 py-12 shadow-elevated px-3 flex flex-col items-start space-y-10">
+        class="w-full h-50 sm:w-[400px] bg-slate-200 py-12 shadow-elevated px-3 flex flex-col items-start space-y-10">
         @for (navItem of navItems; track navItem.path) {
           <a
             (click)="toggleShowMenu()"

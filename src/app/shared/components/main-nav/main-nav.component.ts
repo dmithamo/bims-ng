@@ -1,11 +1,17 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, OnDestroy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import {
+  NavigationEnd,
+  Router,
+  RouterLink,
+  RouterLinkActive,
+} from '@angular/router';
 import { SvgIconComponent } from '../svg-icon/svg-icon.component';
 import { AppNavItem } from '../../utils/types';
 import { APP_ROUTE } from '../../constants/routes.constants';
 import { AuthService } from '../../../_services/auth/auth.service';
 import { LogoComponent } from '../logo/logo.component';
+import { filter, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-main-nav',
@@ -19,10 +25,14 @@ import { LogoComponent } from '../logo/logo.component';
   ],
   templateUrl: './main-nav.component.html',
 })
-export class MainNavComponent {
+export class MainNavComponent implements OnDestroy {
   public showMenu = signal(false);
+  public currentNavItem = signal<AppNavItem | null>(null);
+
   public menuDrawerIconName = computed(() => {
-    return this.showMenu() ? 'close' : 'bars';
+    if (!this.currentNavItem()) return 'bars';
+
+    return this.showMenu() ? 'close' : '';
   });
 
   protected navItems: AppNavItem[] = [
@@ -51,8 +61,27 @@ export class MainNavComponent {
       permissions: [],
     },
   ];
+  private routerEvents: Subscription;
 
-  constructor(protected authService: AuthService) {}
+  constructor(
+    protected authService: AuthService,
+    private router: Router,
+  ) {
+    this.routerEvents = this.router.events
+      .pipe(filter(e => e instanceof NavigationEnd))
+      .subscribe(event => {
+        const currentPath = (event as NavigationEnd).url;
+
+        this.currentNavItem.set(
+          this.navItems.find(item => currentPath.startsWith(`/${item.path}`)) ??
+            null,
+        );
+      });
+  }
+
+  ngOnDestroy() {
+    this.routerEvents.unsubscribe();
+  }
 
   public toggleShowMenu = () => this.showMenu.set(!this.showMenu());
 }

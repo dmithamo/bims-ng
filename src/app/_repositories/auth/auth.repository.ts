@@ -7,7 +7,7 @@ import {
 } from '../../shared/models/auth.model';
 import { UUID } from '../../shared/utils/types';
 
-const SESSION_ID_KEY = 'SESSION_ID';
+const sessionIdKey = 'sessionId';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +16,7 @@ export class AuthRepository {
   constructor(private storageService: StorageService) {}
 
   get sessionId(): SessionId | null {
-    return this.storageService.get(SESSION_ID_KEY);
+    return this.storageService.get(sessionIdKey);
   }
 
   async getSessionUser(): Promise<SessionUser | null> {
@@ -33,7 +33,7 @@ export class AuthRepository {
   }
 
   removeSessionId() {
-    this.storageService.remove(SESSION_ID_KEY);
+    this.storageService.remove(sessionIdKey);
   }
 
   async login({ username, password }: Credentials): Promise<SessionUser> {
