@@ -9,14 +9,11 @@
   <label class="relative block" for="email">
     <span class="font-bold">Email</span>
     <input
-      class="w-full mt-1 p-3 pl-10 rounded bg-slate-50 border border-slate-300 focus:bg-white focus:border focus:border-black focus:outline-none disabled:bg-slate-50 invalid:border-red-500 invalid:text-red-500"
+      class="w-full mt-1 p-3 rounded bg-slate-50 border border-slate-300 focus:bg-white focus:border focus:border-black focus:outline-none disabled:bg-slate-50 invalid:border-red-500 invalid:text-red-500"
       formControlName="username"
       id="email"
       placeholder="Enter your email address"
       type="email" />
-    <app-svg-icon
-      iconClass="absolute left-0 ml-3 top-6 mt-4 text-gray-400"
-      iconName="at-symbol" />
 
     @if (hasFieldError('username')) {
       @if (username.errors?.['required']) {
@@ -39,13 +36,10 @@
     <span class="font-bold">Password</span>
     <input
       [type]="showPassword() ? 'text' : 'password'"
-      class="w-full mt-1 p-3 pl-10 rounded bg-slate-50 border border-slate-300 focus:bg-white focus:border focus:border-black focus:outline-none disabled:bg-slate-50 invalid:border-red-500 invalid:text-red-500"
+      class="w-full mt-1 p-3 rounded bg-slate-50 border border-slate-300 focus:bg-white focus:border focus:border-black focus:outline-none disabled:bg-slate-50 invalid:border-red-500 invalid:text-red-500"
       formControlName="password"
       id="password"
       placeholder="Enter your password" />
-    <app-svg-icon
-      iconClass="absolute left-0 ml-3 top-6 mt-4 text-gray-400"
-      iconName="lock-closed" />
 
     <app-svg-icon
       (click)="toggleShowPassword()"

@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { APP_ROUTE } from './shared/constants/routes.constants';
-import { loggedInGuard } from './_guards/auth/logged-in.guard';
 import { loggedOutGuard } from './_guards/auth/logged-out.guard';
+import { loggedInGuard } from './_guards/auth/logged-in.guard';
 
 export const routes: Routes = [
   {

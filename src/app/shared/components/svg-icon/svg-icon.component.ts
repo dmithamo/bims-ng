@@ -20,6 +20,15 @@ export class SvgIconComponent implements OnInit, OnChanges {
     private sanitizer: DomSanitizer,
   ) {}
 
+  ngOnInit() {
+    this.fetchIcon(this.iconName);
+    this.provideDefaultDimensions();
+  }
+
+  ngOnChanges() {
+    this.fetchIcon(this.iconName);
+  }
+
   private fetchIcon(name: string) {
     this.iconService.getIcon(name).subscribe(svgContent => {
       this.sanitizedSvgContent = svgContent
@@ -28,11 +37,9 @@ export class SvgIconComponent implements OnInit, OnChanges {
     });
   }
 
-  ngOnInit() {
-    this.fetchIcon(this.iconName);
-  }
-
-  ngOnChanges() {
-    this.fetchIcon(this.iconName);
+  private provideDefaultDimensions() {
+    if (!this.iconClass.includes('w-')) {
+      this.iconClass += 'w-6 h-6';
+    }
   }
 }

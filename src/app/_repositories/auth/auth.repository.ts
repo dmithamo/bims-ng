@@ -25,7 +25,11 @@ export class AuthRepository {
       return null;
     }
 
-    return Promise.resolve(null);
+    return Promise.resolve({
+      username: 'Dennis',
+      permissions: [],
+      avatar: '',
+    });
   }
 
   removeSessionId() {
