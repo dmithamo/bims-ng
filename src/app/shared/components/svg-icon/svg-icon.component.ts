@@ -39,7 +39,7 @@ export class SvgIconComponent implements OnInit, OnChanges {
 
   private provideDefaultDimensions() {
     if (!this.iconClass.includes('w-')) {
-      this.iconClass += 'w-6 h-6';
+      this.iconClass += ' w-6 h-6';
     }
   }
 }
