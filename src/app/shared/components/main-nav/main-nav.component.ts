@@ -3,7 +3,6 @@ import {
   computed,
   ElementRef,
   OnDestroy,
-  Renderer2,
   signal,
   ViewChild,
 } from '@angular/core';
@@ -75,7 +74,6 @@ export class MainNavComponent implements OnDestroy {
   constructor(
     protected authService: AuthService,
     private router: Router,
-    private renderer: Renderer2,
   ) {
     this.routerEvents = this.router.events
       .pipe(filter(e => e instanceof NavigationEnd))
