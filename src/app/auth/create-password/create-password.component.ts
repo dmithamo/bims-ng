@@ -98,9 +98,13 @@ export class CreatePasswordComponent implements OnInit {
     this.showPassword.set(!this.showPassword());
   }
 
-  hasFieldError(fieldName: 'password' | 'repeatPassword'): boolean {
-    const field = this[fieldName];
-    return (field.dirty || field.invalid) && field.touched;
+  hasFieldError(fieldName: 'password' | 'repeatPassword' | string): boolean {
+    if (fieldName === 'password' || fieldName === 'repeatPassword') {
+      const field = this[fieldName];
+      return (field.dirty || field.invalid) && field.touched;
+    }
+
+    return false;
   }
 
   async createPassword() {
