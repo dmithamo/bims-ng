@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: 'goudy-bookletter-1911', serif;
+  font-family: 'Overpass', sans-serif;
   font-weight: 400;
   font-style: normal;
 }
