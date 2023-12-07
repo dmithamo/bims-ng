@@ -1,8 +1,9 @@
-<div class="w-full h-screen">
-  <main class="relative w-full h-full flex flex-col">
-    <section class="w-full flex-1">
-      <router-outlet></router-outlet>
-    </section>
-    <app-main-nav />
+<div class="w-full flex flex-col h-screen relative">
+  <main class="relative w-full flex-1 h-full">
+    <router-outlet></router-outlet>
   </main>
+
+  <div class="w-full fixed bottom-0">
+    <app-main-nav />
+  </div>
 </div>

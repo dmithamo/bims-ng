@@ -1,9 +1,9 @@
 @if (authService.isLoggedIn()) {
   <nav
-    class="w-full flex items-center justify-between py-1 px-3 text-accent bg-white shadow-elevated fixed bottom-0 right-0 z-10">
+    class="w-full flex items-center justify-between py-1 px-3 text-accent bg-white shadow-elevated">
     <app-logo (click)="showMenu() ? toggleShowMenu() : undefined" />
 
-    @if (!showMenu()) {
+    @if (!showMenu() && currentNavItem()) {
       <a
         [routerLink]="undefined"
         (click)="toggleShowMenu()"
