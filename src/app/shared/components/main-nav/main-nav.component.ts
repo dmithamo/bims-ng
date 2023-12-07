@@ -1,4 +1,12 @@
-import { Component, computed, OnDestroy, signal } from '@angular/core';
+import {
+  Component,
+  computed,
+  ElementRef,
+  OnDestroy,
+  Renderer2,
+  signal,
+  ViewChild,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   NavigationEnd,
@@ -34,6 +42,8 @@ export class MainNavComponent implements OnDestroy {
     return this.showMenu() ? 'close' : 'bars';
   });
 
+  @ViewChild('menu') menu: ElementRef | undefined;
+
   protected navItems: AppNavItem[] = [
     {
       path: APP_ROUTE.dashboard,
@@ -65,6 +75,7 @@ export class MainNavComponent implements OnDestroy {
   constructor(
     protected authService: AuthService,
     private router: Router,
+    private renderer: Renderer2,
   ) {
     this.routerEvents = this.router.events
       .pipe(filter(e => e instanceof NavigationEnd))

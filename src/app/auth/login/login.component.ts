@@ -25,30 +25,23 @@ import { MainFooterComponent } from '../../shared/components/main-footer/main-fo
   templateUrl: './login.component.html',
 })
 export class LoginComponent {
+  loginForm = this.fb.group({
+    username: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.minLength(5)]],
+  });
+  loginError = signal<string | null>(null);
+  showPassword = signal(false);
+  togglePasswordIcon = computed(() => {
+    if (this.showPassword()) return 'eye-slash';
+    return 'eye';
+  });
+  protected readonly APP_ROUTE = APP_ROUTE;
+
   constructor(
     private authService: AuthService,
     private router: Router,
     private fb: FormBuilder,
   ) {}
-
-  loginForm = this.fb.group({
-    username: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required, Validators.minLength(5)]],
-  });
-
-  loginError = signal<string | null>(null);
-  resetLoginError() {
-    this.loginError.set(null);
-  }
-
-  showPassword = signal(false);
-  toggleShowPassword() {
-    this.showPassword.set(!this.showPassword());
-  }
-  togglePasswordIcon = computed(() => {
-    if (this.showPassword()) return 'eye-slash';
-    return 'eye';
-  });
 
   get username() {
     return this.loginForm.controls.username;
@@ -56,6 +49,14 @@ export class LoginComponent {
 
   get password() {
     return this.loginForm.controls.password;
+  }
+
+  resetLoginError() {
+    this.loginError.set(null);
+  }
+
+  toggleShowPassword() {
+    this.showPassword.set(!this.showPassword());
   }
 
   hasFieldError(fieldName: 'username' | 'password'): boolean {
@@ -74,11 +75,9 @@ export class LoginComponent {
         ...(this.loginForm.value as Credentials),
       });
 
-      await this.router.navigate([APP_ROUTE.dashboard]);
+      await this.router.navigate([APP_ROUTE.root]);
     } catch (error) {
       this.loginError.set((error as unknown as AuthError).message);
     }
   }
-
-  protected readonly APP_ROUTE = APP_ROUTE;
 }

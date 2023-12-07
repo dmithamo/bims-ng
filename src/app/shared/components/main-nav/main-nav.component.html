@@ -1,7 +1,8 @@
 @if (authService.isLoggedIn()) {
   <nav
-    [ngClass]="
-      'w-full flex items-center justify-between text-accent bg-white shadow-elevated'.concat(
+    id="menu"
+    [class]="
+      'w-full flex items-center justify-between text-accent bg-white shadow'.concat(
         showLogo() || !currentNavItem() ? ' py-1 px-3' : ' p-3'
       )
     ">
@@ -10,13 +11,10 @@
     }
 
     @if (currentNavItem()) {
-      <a
-        [routerLink]="undefined"
-        (click)="toggleShowMenu()"
-        class="flex items-center gap-x-2">
+      <div class="flex items-center gap-x-2">
         <app-svg-icon [iconName]="currentNavItem()!.icon" />
         <span class="capitalize">{{ currentNavItem()!.label }}</span>
-      </a>
+      </div>
     }
 
     <app-svg-icon
@@ -27,9 +25,9 @@
 
   @if (showMenu()) {
     <div
-      class="fixed right-0 bottom-14 w-full h-screen bg-gray-200/75 flex flex-col justify-end items-start sm:items-end">
+      class="fixed right-0 bottom-14 w-full h-screen bg-slate-100/50 flex flex-col justify-end items-start sm:items-end">
       <div
-        class="w-full h-50 sm:w-[400px] bg-slate-200 py-12 shadow-elevated px-3 flex flex-col items-start space-y-10">
+        class="w-full h-50 sm:w-[400px] bg-slate-300 py-12 shadow-elevated px-3 flex flex-col items-start space-y-10">
         @for (navItem of navItems; track navItem.path) {
           <a
             (click)="toggleShowMenu()"
